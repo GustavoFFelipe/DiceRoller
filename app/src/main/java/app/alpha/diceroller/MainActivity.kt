@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             //Toast.makeText(this, "Dice is rolling", Toast.LENGTH_SHORT).show()
             rollDice()
         }
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() { // function with de rules of the dice rolling random
@@ -29,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else  -> R.drawable.dice_6
         }
-        val diceImage: ImageView = findViewById(R.id.dice_image)
         diceImage.setImageResource(drawableResource)
 
     }
